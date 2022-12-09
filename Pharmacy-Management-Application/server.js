@@ -5,6 +5,7 @@ const cors = require("cors");
 const stripe = require("stripe")(process.env.SECRET_KEY)
 const Contact = require("./backend/models/Contact")
 const productRoutes = require("./backend/routes/productRoutes");
+const contactRoutes = require("./backend/routes/contactRoutes");
 const userRoutes = require("./backend/routes/users");
 const authRoutes = require("./backend/routes/auth");
 const connectDB = require("./backend/config/db");
@@ -61,6 +62,7 @@ app.post("/payment", (req, res) => {
 
 
 app.use("/api/products", productRoutes);
+app.use("/api/contacts", contactRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 

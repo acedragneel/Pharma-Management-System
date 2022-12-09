@@ -1,8 +1,10 @@
 require("dotenv").config();
 
 const productData = require("./data/products");
+const contactData = require("./data/contacts");
 const connectDB = require("./config/db");
 const Product = require("./models/Product");
+const Contact = require("./models/Contact");
 const multer = require("multer");
 const upload = multer({dest:"uploads/"})
 
@@ -24,9 +26,9 @@ const importData = async () => {
   try {
     await Product.deleteMany({});
     await Product.insertMany(productData);
+    await Contact.deleteMany({});
+    await Contact.insertMany(contactData);
     console.log("Data Import Success");
-
-    // userAuth();
 
     process.exit();
   } catch (error) {
@@ -36,12 +38,3 @@ const importData = async () => {
 };
 
 importData();
-
-// const userAuth =  (app) =>{
-//    app.use("/api/users", userRoutes);
-//    app.use("/api/auth", authRoutes);
-
-//   const port = process.env.PORT || 8080;
-//   app.listen(port, console.log(`Listening on port ${port}...`));
-
-// }

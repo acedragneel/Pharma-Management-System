@@ -9,9 +9,14 @@ import {
   getProductDetailsReducer,
 } from "./reducers/productReducers";
 
+import {
+  getContactsReducer,
+} from "./reducers/contactReducers";
+
 const reducer = combineReducers({
   cart: cartReducer,
   getProducts: getProductsReducer,
+  getContacts: getContactsReducer,
   getProductDetails: getProductDetailsReducer,
 });
 

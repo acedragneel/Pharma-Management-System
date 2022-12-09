@@ -1,7 +1,8 @@
 import "../styles/Product.css";
 import { Link } from "react-router-dom";
 
-const Product = ({ imgsrc, title, indication, dosage, sideEffects,price,productId }) => {
+const Product = ({ imgsrc, title, indication, dosage, sideEffects,price,productId,setid }) => { 
+  // console.log(productId);
   return (
     <div className="product">
       <img src={imgsrc} alt={title} />
@@ -14,7 +15,6 @@ const Product = ({ imgsrc, title, indication, dosage, sideEffects,price,productI
         <p  className="info__description"><span style={{fontWeight: "bold",fontSize:"14px"}}>Side Effects: </span>{sideEffects}</p>
 
         <p className="info__price">₹{price}</p>
-
         <Link to={`/product/${productId}`} className="info__button">
           View
         </Link>

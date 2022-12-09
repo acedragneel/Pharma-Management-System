@@ -96,3 +96,27 @@
 	color: white;
 	margin: 10px;
 }
+
+@media(max-width:768px) {
+	.login_form_container{
+		flex-direction: column;
+		width: 95vw;
+	}
+	.right{
+		border-radius: 10px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+	}
+	.left{
+		border-radius: 10px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	.input{
+		width: 95%;
+	}
+	h1{
+		margin: 0px 5px;
+		text-align: center;
+	}
+}

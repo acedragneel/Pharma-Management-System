@@ -8,7 +8,7 @@ import Product from "../components/Product";
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
 
-const HomeScreen = () => {
+const HomeScreen = ({setid}) => {
   const dispatch = useDispatch();
 
   const getProducts = useSelector((state) => state.getProducts);

@@ -8,8 +8,10 @@ import allProductsData from "../Data/allProductsData";
 import Card from "../components/Card";
 
 
-function mainScreen() {
+function mainScreen({setShowNav}) {
+    setShowNav(true);
     return (
+        
         <div>
             <div className="container text-center ">
                 <h1 className="mt-3 "> Online Medicine Store</h1>

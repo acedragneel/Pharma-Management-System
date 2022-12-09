@@ -11,7 +11,7 @@ import Product from "../components/Product";
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
 
-function StaticScreen() {
+function StaticScreen({setid}) {
 
   const dispatch = useDispatch();
 
@@ -45,14 +45,17 @@ function StaticScreen() {
                 sideEffects={product.sideEffects.length > 50 ? product.sideEffects.slice(0, 50) + "..." : product.sideEffects}
                 price={product.price}
                 productId={product._id}
+                setid={setid}
               />
             )
             )
+            
           )}
         </div>
       </div>
     </div>
   )
+  
 }
 
 export default StaticScreen

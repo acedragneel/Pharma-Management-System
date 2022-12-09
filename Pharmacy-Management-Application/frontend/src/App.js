@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-
 // Components
 import Navbar from "./components/Navbar";
 import SideDrawer from "./components/SideDrawer";
@@ -26,27 +25,28 @@ import WomensCareScreen from "./screens/WomensCareScreen";
 import AdminScreen from "./screens/AdminScreen";
 // import
 
-import Main from "./components/Main";
 import Signup from "./components/Singup";
 import Login from "./components/Login";
 
 
-function App() {
+function App(props) {
   const [sideToggle, setSideToggle] = useState(false);
   const user = localStorage.getItem("token");
+  const [showNav, setShowNav] = useState(false);
+
 
   return (
-    <Router>
-      <Navbar click={() => setSideToggle(true)} />
+    
+    <Router> 
+        {
+      showNav &&
+      <Navbar click={() => setSideToggle(true)} />}
       <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main className="app">
         <Routes>
           {/* {user && <Route path="/" exact element={<Main />} />} */}
-          <Route path="/signup" exact element={<Signup />} />
-          <Route path="/login" exact element={<Login />} />
-          <Route exact path="/" element={<Navigate replace to="/login" />} />
-          {user && <Route exact path="/mainscreen" element={<MainScreen/>} />}
+          {user && <Route exact path="/" element={<MainScreen setShowNav = {setShowNav}/>} />}
           <Route exact path="/allProducts" element={<AllProductsScreen/>} />
           <Route exact path="/product" element={<HomeScreen/>} />
           <Route exact path="/product/:id" element={<ProductScreen/>} />
@@ -55,15 +55,22 @@ function App() {
           <Route exact path="/products/dental" element={<DentalScreen/>} />
           <Route exact path="/products/fracture" element={<FractureScreen/>} />
           <Route exact path="/products/womensCare"element={<WomensCareScreen/>}/>
-          <Route exact path="/about" element={<AboutScreen/>} />
+          <Route exact path="/about" element={<AboutScreen />} />
           <Route exact path="/contact" element={<ContactScreen/>} />
-          <Route exact path="/admin" element={<AdminScreen/>} />
+          <Route exact path="/admin" element={<AdminScreen setShowNav = {setShowNav}/>} />
           <Route exact path="/cart" element={<CartScreen/>} />
+          <Route path="/signup" exact element={<Signup/>} />
+          <Route path="/login" exact element={<Login setShowNav = {setShowNav}/>} />
+          <Route exact path="/" element={<Navigate replace to="/login" />} />
+
         </Routes>
       </main>
-      <Footer />
+      {
+      showNav &&
+      <Footer />}
     </Router>
   );
 }
+
 
 export default App;
