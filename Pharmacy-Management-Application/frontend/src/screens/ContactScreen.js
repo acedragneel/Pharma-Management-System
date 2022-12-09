@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
+// import emailjs from "@emailjs/browser";
 
 function ContactScreen() {
     const [data, setData] = useState({
@@ -24,7 +25,33 @@ function ContactScreen() {
         alert(
             `Your Full Name is ${data.fullName}. Your Email address ${data.email} ,Your Gender is ${data.gender}, Your City is ${data.city} ,Your message is ${data.message}. Thank For Your Response`
         );
+        // sendEmail(e);
+        // document.getElementById("form_data").reset();
     };
+
+    // const form = useRef();
+
+    // const sendEmail = (e) => {
+    //     e.preventDefault();
+    
+    //     emailjs
+    //       .sendForm(
+    //         "service_hjv9t8l",
+    //         "template_9fnt38l",
+    //         form.current,
+    //         "OQkU8VAooVQFNSmR8"
+    //       )
+    //       .then(
+    //         (result) => {
+    //           console.log(result.text);
+    //           console.log("message sent");
+    //         },
+    //         (error) => {
+    //           console.log(error.text);
+    //         }
+    //       );
+    //   };
+    
 
     const PostData = async (e) => {
         e.preventDefault();
@@ -58,7 +85,7 @@ function ContactScreen() {
                 <div className="container my-5">
                     <div className="row">
                         <div className="col-xxl-8 col-10 col-md-8 mx-auto">
-                            <form onSubmit={formSubmit} method="POST">
+                            <form  id = "form_data" onSubmit={formSubmit} method="POST">
                                 <div className="mb-3">
                                     <label htmlFor="exampleInputtext1"
                                         className="form-label">Name</label>

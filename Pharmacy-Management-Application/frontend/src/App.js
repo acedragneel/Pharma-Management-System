@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import SideDrawer from "./components/SideDrawer";
 import Backdrop from "./components/Backdrop";
 import Footer from "./components/Footer";
+import "./styles/MainScreen.css"
 
 // Screens
 import HomeScreen from "./screens/HomeScreen";
@@ -36,7 +37,7 @@ function App(props) {
 
 
   return (
-    
+    <div className="mainscreen">
     <Router> 
         {
       showNav &&
@@ -69,6 +70,7 @@ function App(props) {
       showNav &&
       <Footer />}
     </Router>
+    </div>
   );
 }
 

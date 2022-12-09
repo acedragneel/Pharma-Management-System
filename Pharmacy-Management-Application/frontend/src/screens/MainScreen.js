@@ -3,7 +3,6 @@ import caro1 from "../images/caro1.jpg";
 import caro2 from "../images/caro2.jpg";
 import caro3 from "../images/caro3.jpg";
 import caro4 from "../images/caro4.webp";
-import "../styles/MainScreen.css";
 import allProductsData from "../Data/allProductsData";
 import Card from "../components/Card";
 
@@ -18,33 +17,29 @@ function mainScreen({setShowNav}) {
                 <hr className="w-50 mx-auto" />
             </div>
 
-            <div className="container mt-4" >
-                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src={caro2} className="d-block w-100" alt="..." />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={caro1} className="d-block w-100" alt="..." />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={caro3} className="d-block w-100" alt="..." />
-                        </div>
-                        <div className="carousel-item">
-                            <img src={caro4} className="d-block w-100" alt="..." />
-                        </div>
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src={caro1} class="d-block w-100" alt="..."/>
                     </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
+                    <div class="carousel-item">
+                    <img src={caro2} class="d-block w-100" alt="..."/>
+                    </div>
+                    <div class="carousel-item">
+                    <img src={caro3} class="d-block w-100" alt="..."/>
+                    </div>
+                    <div class="carousel-item">
+                    <img src={caro4} class="d-block w-100" alt="..."/>
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
             <div className="homescreen" style={{marginTop:"50px"}}>
@@ -71,7 +66,6 @@ function mainScreen({setShowNav}) {
 
                 </div>
             </div>
-
         </div>
     )
 }

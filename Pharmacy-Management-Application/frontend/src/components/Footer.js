@@ -30,7 +30,7 @@ function Footer() {
                     </div>
                    
                 </div>
-                <p className="copyright">E-pharmacy © 2021</p>
+                <p className="copyright">E-pharmacy © 2022</p>
             </div>
         </footer>
     </div>

@@ -1,7 +1,7 @@
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import logo from "../images/logo.png";
+import logo from "../images/npharma.png";
 
 const Navbar = ({ click }) => {
   const cart = useSelector((state) => state.cart);
@@ -18,9 +18,9 @@ const Navbar = ({ click }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     
-      <Link to="/" className="">
+      <Link to="/mainscreen" className="">
         <span className="logo">
-          <img src={logo} style={{ height: "40px", width: "200px" }} alt="" />
+          <img src={logo} style={{ height: "100px", width: "100px" }} alt="" />
         </span>
 
       </Link>
@@ -68,11 +68,11 @@ const Navbar = ({ click }) => {
               Cart <span className="cartlogo__badge">{getCartCount()}</span>
             </span>
           </Link>
-          <button className="display:flex btn btn-dark" onClick={handleLogout}>
-            Logout
-          </button>
         </li>
         <li>
+        <button className="display:flex btn btn-dark btn-lg" onClick={handleLogout}>
+            Logout
+          </button>
 
         </li>
       </ul>
