@@ -44,9 +44,12 @@ npm install
 
 Create a `.env` file in the `backend` directory and set the environment variables:
 
-PORT=3001
-MONGODB_URI=mongodb://localhost/pharmacy_management
-SECRET_KEY=your_secret_key
+PORT=5000
+NODE_ENV= production
+SECRET_KEY = ''
+MONGO_URI = ''
+JWTPRIVATEKEY = ''
+SALT = 10
 
 ### Frontend
 
