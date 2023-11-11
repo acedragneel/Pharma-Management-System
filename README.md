@@ -44,12 +44,14 @@ npm install
 
 Create a `.env` file in the `backend` directory and set the environment variables:
 
+```env
 PORT=5000
 NODE_ENV= production
 SECRET_KEY = ''
 MONGO_URI = ''
 JWTPRIVATEKEY = ''
 SALT = 10
+```
 
 ### Frontend
 
