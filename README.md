@@ -29,14 +29,17 @@ cd pharmacy-management-apP
 
 ### Backend (Express.js)
 
+```env
 cd backend
 npm install
+```
 
 ### Frontend (React.js)
 
+```env
 cd frontend
 npm install
-
+```
 
 ## Configuration
 
